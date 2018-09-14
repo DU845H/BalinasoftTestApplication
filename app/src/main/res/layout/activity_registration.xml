@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    android:padding="16dp"
+    tools:context=".Registration_Activity">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/logo_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="80dp"
+            android:contentDescription="@string/none"
+            android:src="@drawable/logo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/email_text_view"
+            style="@style/FieldNameStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="80dp"
+            android:text="@string/email_string"
+            app:layout_constraintTop_toBottomOf="@id/logo_image" />
+
+        <android.support.v7.widget.AppCompatMultiAutoCompleteTextView
+            android:id="@+id/email_input_view"
+            style="@style/HintStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:completionThreshold="0"
+            android:hint="@string/hint_email_string"
+            android:inputType="textEmailAddress"
+            android:paddingBottom="25dp"
+            android:textColorHint="@color/colorAccent"
+            app:backgroundTint="@color/colorAccent"
+            app:layout_constraintTop_toBottomOf="@id/email_text_view" />
+
+        <TextView
+            android:id="@+id/password_text_view"
+            style="@style/FieldNameStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/password_string"
+            app:layout_constraintTop_toBottomOf="@id/email_input_view" />
+
+        <android.support.v7.widget.AppCompatEditText
+            android:id="@+id/password_input_view"
+            style="@style/HintStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:drawableEnd="@drawable/ic_view"
+            android:hint="@string/hint_password_string"
+            android:inputType="textPassword"
+            android:paddingBottom="25dp"
+            android:textColorHint="@color/colorAccent"
+            app:backgroundTint="@color/colorAccent"
+            app:layout_constraintTop_toBottomOf="@id/password_text_view" />
+
+        <Button
+            android:id="@+id/registration_button"
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/registration_button_gradient"
+            android:onClick="onRegistrationButtonClick"
+            android:text="@string/registration_button"
+            android:textAllCaps="false"
+            app:layout_constraintTop_toBottomOf="@id/password_input_view" />
+
+    </android.support.constraint.ConstraintLayout>
+</ScrollView>

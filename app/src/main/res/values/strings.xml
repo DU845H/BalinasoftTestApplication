@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">TestApplication</string>
+
+    <string name="none"/>
+
+    <string name="email_string">Email</string>
+    <string name="hint_email_string">введите Email</string>
+    <string name="hint_password_string">введите пароль</string>
+    <string name="password_string">Password</string>
+    <string name="registration_button">Регистрация</string>
+
+    <string name="error_of_password_minimum_length">Недостаточная длина пароля(мин. 5 символов)</string>
+    <string name="error_of_password_maximum_length">Избыточная длина пароля(макс. 10 символов)</string>
+    <string name="error_of_password_emptiness">Пустое поле ввода пароля</string>
+
+    <string name="error_of_email_syntax">Ошибка синтаксиса email</string>
+    <string name="error_of_email_domain">Проверьте правильность введенного домена</string>
+    <string name="error_of_email_emptiness">Пустое имя ввода email</string>
+
+    <string name="successful_registration">Регистрация прошла успешно</string>
+</resources>

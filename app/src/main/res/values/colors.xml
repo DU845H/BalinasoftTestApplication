@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3486cb</color>
+    <color name="colorPrimaryDark">#aad2ed</color>
+    <color name="colorAccent">#aad2ed</color>
+    <color name="registration_button_color">#2bda8e</color>
+    <color name="black">#000000</color>
+</resources>
