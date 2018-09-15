@@ -12,6 +12,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.ScrollView;
 import android.widget.Toast;
 
 import java.util.regex.Matcher;
@@ -20,7 +21,7 @@ import java.util.regex.Pattern;
 public class Registration_Activity extends AppCompatActivity {
 
     //наиболее частовстречающиеся домены
-    private final String[] domains = {"com", "net", "uk", "fm", "ru", "by", "ua", "org"};
+    private final String[] domains = {"com", "net", "uk", "fm", "ru", "by", "ua", "org", "run"};
 
     //Наиболее частовстречающиеся адреса электронной почты
     private final String[] popularDomains = {"aol.com", "att.net", "comcast.net", "facebook.com",
@@ -37,6 +38,8 @@ public class Registration_Activity extends AppCompatActivity {
     //Поле ввода пароля
     private EditText passwordInput;
 
+    private ScrollView scrollView;
+
     @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +47,11 @@ public class Registration_Activity extends AppCompatActivity {
         setContentView(R.layout.activity_registration);
 
         passwordInput = findViewById(R.id.password_input_view);
+
+        scrollView = findViewById(R.id.scroll_view);
+
+        //TODO Прокрутка вниз при нажатии на поле с паролем
+        //TODO Прокрутка вниз при нажатии на поле с email
 
         //Настройка слушателя определения нажатия на картинку для скрытия/показа пароля
         passwordInput.setOnTouchListener(new View.OnTouchListener() {
@@ -53,13 +61,18 @@ public class Registration_Activity extends AppCompatActivity {
                 final int DRAWABLE_RIGHT = 2;
 
                 if (event.getAction() == MotionEvent.ACTION_UP) {
+
+                    passwordInput.requestFocus();
+
                     if (event.getRawX() >= (passwordInput.getRight() - passwordInput.
                             getCompoundDrawables()[DRAWABLE_RIGHT].getBounds().width())) {
 
                         if (passwordInput.getTransformationMethod() != null) {
                             passwordInput.setTransformationMethod(null);
+                            passwordInput.setSelection(passwordInput.getText().length());
                         } else {
                             passwordInput.setTransformationMethod(new PasswordTransformationMethod());
+                            passwordInput.setSelection(passwordInput.getText().length());
                         }
 
                         return true;
@@ -88,8 +101,10 @@ public class Registration_Activity extends AppCompatActivity {
                         atCount(emailInput.getText().toString()) == 1) {
                     emailInput.setAdapter(adapter);
                     emailInput.setTokenizer(new EmailTokenizer());
+                    emailInput.showDropDown();
                 } else {
                     emailInput.setAdapter(null);
+                    emailInput.dismissDropDown();
                 }
             }
 
