@@ -9,13 +9,19 @@
     <string name="password_string">Пароль</string>
     <string name="registration_button">Регистрация</string>
 
-    <string name="error_of_password_minimum_length">Недостаточная длина пароля(мин. 5 символов)</string>
-    <string name="error_of_password_maximum_length">Избыточная длина пароля(макс. 10 символов)</string>
+    <string name="error_of_password_minimum_length">Недостаточная длина пароля(мин. 8 символов)</string>
+    <string name="error_of_password_maximum_length">Избыточная длина пароля(макс. 500 символов)</string>
     <string name="error_of_password_emptiness">Пустое поле ввода пароля</string>
 
     <string name="error_of_email_syntax">Ошибка синтаксиса email</string>
-    <string name="error_of_email_domain">Проверьте правильность введенного домена</string>
+    <string name="error_of_email_domain">Проверьте подключение к интернету/Проверьте правильность введенного домена</string>
     <string name="error_of_email_emptiness">Пустое поле ввода email</string>
 
-    <string name="successful_registration">Регистрация прошла успешно</string>
+    <string name="successful_registration">Регистрация прошла успешно:</string>
+    <string name="login_already_use">Такой логин уже используется:</string>
+    <string name="unexpected_server_error">Непредвиденная ошибка сервера</string>
+    <string name="unsuccessful_registration">При регистрации возникли ошибки:</string>
+    <string name="login_size_error">Размер логина должен быть от 4-х до 32-х символов</string>
+
+    <string name="login_description">В качестве логина берется имя почтового ящика</string>
 </resources>
